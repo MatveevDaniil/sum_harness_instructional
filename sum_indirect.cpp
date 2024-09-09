@@ -40,10 +40,8 @@ int64_t
 sum(int64_t N, uint64_t A[])
 {
   //  printf(" inside sum_indirect perform_sum, N=%lld \n", N);
-  int64_t idx = 0, answer = 0;
-  for (int i = 0; i < N; i++) {
-    answer += A[idx];
-    idx = A[idx];
-  }
+  int64_t answer = 0;
+  for (int64_t i = A[0]; i != 0; i = A[i])
+    answer += i;
   return answer;
 }
